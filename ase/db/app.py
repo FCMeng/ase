@@ -202,6 +202,12 @@ def new_app(projects):
     return app
 
 
+# TODO: Issue deprecation warnings if someone accesses these variables.
+projects = {}
+app = new_app(projects)
+handle_query = request2string
+
+
 def main():
     db = connect(sys.argv[1])
     DBApp.run_db(db)
